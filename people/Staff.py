@@ -1,7 +1,7 @@
-import People
+import Person
 
 
-class Staff(People):
+class Staff(Person.Person):
 
     # create a staff member.
     def __init__(self, name):

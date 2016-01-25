@@ -1,4 +1,5 @@
 import unittest
+from people.Staff import Staff
 
 
 class TestStaff(unittest.TestCase):
@@ -14,3 +15,6 @@ class TestStaff(unittest.TestCase):
 
     def test_staff_properties(self):
         self.assertEquals(self.staff.name, 'Martin Luther')
+
+if __name__ == '__main__':
+    unittest.main()

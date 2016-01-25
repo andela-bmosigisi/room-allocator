@@ -1,7 +1,9 @@
 import abc
 
 
-class People(abc.ABCMeta):
+class Person:
+
+    __metaclass__ = abc.ABCMeta
 
     # should return true if person has a room.
     def get_allocated(self):

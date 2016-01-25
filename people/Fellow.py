@@ -1,7 +1,7 @@
-import People
+import Person
 
 
-class Fellow(People):
+class Fellow(Person.Person):
 
     # create a fellow.
     def __init__(self, name, opt_in=False):
