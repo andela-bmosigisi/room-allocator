@@ -18,10 +18,10 @@ class Room:
             return False
 
         else:
-            if (person.get_allocated()):
+            if (person.allocated):
                 return False
             self.allocations.append(person)
-            person.set_allocated(True)
+            person.allocated = True
             return True
 
     # a room should say whether it is living or office.
