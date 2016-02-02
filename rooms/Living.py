@@ -1,7 +1,7 @@
 import Room
 
 
-class Living(Room):
+class Living(Room.Room):
 
     def __init__(self, name):
         self.name = name
