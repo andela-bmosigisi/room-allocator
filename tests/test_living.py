@@ -11,6 +11,10 @@ class Test(unittest.TestCase):
     def tearDown(self):
         self.living = None
 
+    def test_living_spaces_are_created(self):
+        self.assertIsInstance(self.living, Living)
+        self.assertEquals(self.living.name, 'Bronx')
+
     def test_allocations_are_returned(self):
         allocations = self.living.get_allocations()
         self.assertIsInstance(allocations, list)
