@@ -23,6 +23,7 @@ class Test(unittest.TestCase):
         # pass a mocked person object.
         person = MagicMock(name='person')
         person.get_type = MagicMock(return_value='fellow')
+        person.get_allocated = MagicMock(return_value=False)
         person.opt_in = True
         self.assertTrue(self.living.allocate_room(person))
         self.assertEquals(len(self.living.allocations), 1)

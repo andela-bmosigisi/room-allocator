@@ -12,6 +12,7 @@ class TestFellow(unittest.TestCase):
 
     def test_fellow_is_instantiated(self):
         self.assertIsInstance(self.fellow, Fellow, 'Fellow is not created.')
+        self.assertEqual(self.fellow.get_type(), 'fellow')
 
     def test_fellow_details(self):
         self.assertEquals(self.fellow.name, 'Benjamin Gikera')

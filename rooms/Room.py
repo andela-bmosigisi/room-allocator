@@ -18,10 +18,13 @@ class Room:
             return False
 
         else:
+            if (person.get_allocated()):
+                return False
             self.allocations.append(person)
+            person.set_allocated(True)
             return True
 
     # a room should say whether it is living or office.
     @abc.abstractmethod
     def get_type(self):
-        pass
+        raise NotImplementedError

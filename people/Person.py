@@ -16,4 +16,4 @@ class Person:
     # a person should say whether he is a fellow or staff.
     @abc.abstractmethod
     def get_type(self):
-        pass
+        raise NotImplementedError

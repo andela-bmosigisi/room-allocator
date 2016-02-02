@@ -12,6 +12,7 @@ class TestStaff(unittest.TestCase):
 
     def test_staff_is_instantiated(self):
         self.assertIsInstance(self.staff, Staff, 'Staff is not created.')
+        self.assertEqual(self.staff.get_type(), 'staff')
 
     def test_staff_properties(self):
         self.assertEquals(self.staff.name, 'Martin Luther')
