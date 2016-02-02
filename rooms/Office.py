@@ -1,7 +1,7 @@
-import Room
+from .Room import Room
 
 
-class Office(Room.Room):
+class Office(Room):
 
     def __init__(self, name):
         self.name = name
