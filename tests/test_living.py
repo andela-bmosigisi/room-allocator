@@ -40,6 +40,11 @@ class Test(unittest.TestCase):
         person.opt_in = False
         self.assertFalse(self.living.allocate_room(person))
         self.assertEquals(len(self.living.allocations), 0)
+        person.get_type = MagicMock(return_value='fellow')
+        person.allocated = True
+        person.opt_in = True
+        self.assertFalse(self.living.allocate_room(person))
+        self.assertEquals(len(self.living.allocations), 0)
 
     def test_get_type(self):
         self.assertEqual('living', self.living.get_type())
