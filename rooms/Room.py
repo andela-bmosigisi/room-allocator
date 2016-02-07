@@ -17,6 +17,9 @@ class Room:
         elif (person.get_type() == 'fellow' and not person.opt_in):
             return False
 
+        elif (person in self.people):
+            return False
+
         else:
             if (person.allocated):
                 return False
