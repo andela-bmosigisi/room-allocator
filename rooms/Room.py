@@ -18,7 +18,7 @@ class Room:
             return False
 
         # Avoid double allocations.
-        elif (person in self.people):
+        elif (person in self.allocations):
             return False
 
         else:

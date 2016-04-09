@@ -39,10 +39,10 @@ class Amity(object):
         """Return a list of opt-in fellows who did not get a
         living space.
         """
-        pass
+        return []
 
     def get_unallocated_staff(self):
         """Return a list of staff who do not have an office.
         List includes both fellows and staff.
         """
-        pass
+        return []

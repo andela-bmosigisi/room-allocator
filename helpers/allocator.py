@@ -50,7 +50,7 @@ def populate_people(amity, input_file):
     """
     with open(input_file, 'r') as f:
         for line in f:
-            tokens = line.split
+            tokens = line.split()
             name = tokens[0] + ' ' + tokens[1]
             if tokens[2] == 'STAFF':
                 amity.people.append(Staff(name))

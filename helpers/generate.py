@@ -37,7 +37,7 @@ def generate_file(number, file_path):
         # import a random number from 1 to 100
         num = random.randint(1, 100)
         # have a bias to ensure more fellows are generated.
-        num = 0 if num < 70 else 1
+        num = 0 if num > 70 else 1
         line = ''
         # if number is 0, generate staff.
         if (num == 0):
