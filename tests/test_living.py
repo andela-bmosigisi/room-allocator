@@ -31,7 +31,7 @@ class TestLiving(unittest.TestCase):
 
     def test_wrong_people_are_not_allocated(self):
         person = MagicMock(name='person')
-        # staff shouldn't be allocated rooms.
+        # staff shouldn't be allocated living space.
         person.get_type = MagicMock(return_value='staff')
         self.assertFalse(self.living.allocate_person(person))
         self.assertEquals(len(self.living.allocations), 0)
@@ -45,6 +45,11 @@ class TestLiving(unittest.TestCase):
         person.opt_in = True
         self.assertFalse(self.living.allocate_person(person))
         self.assertEquals(len(self.living.allocations), 0)
+        # test double allocation.
+        person.allocated = False
+        self.assertTrue(self.living.allocate_person(person))
+        person.allocated = True
+        self.assertFalse(self.living.allocate_person(person))
 
     def test_get_type(self):
         self.assertEqual('living', self.living.get_type())

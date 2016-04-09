@@ -23,7 +23,7 @@ def allocate_people(amity):
             p_count += 1
 
     # first, get a list of opt-in fellows.
-    fellows = [person for person in amity.people if person.get_type ==
+    fellows = [person for person in amity.people if person.get_type() ==
                'fellow' and person.opt_in is True]
     # reset counters.
     p_length = len(fellows)
@@ -56,5 +56,5 @@ def populate_people(amity, input_file):
                 amity.people.append(Staff(name))
             elif tokens[2] == 'FELLOW' and tokens[3] == 'Y':
                 amity.people.append(Fellow(name, True))
-            else:
+            elif tokens[2] == 'FELLOW' and tokens[3] == 'N':
                 amity.people.append(Fellow(name, False))
