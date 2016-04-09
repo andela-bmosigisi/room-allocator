@@ -10,13 +10,14 @@ class Room:
         return self.allocations
 
     # add a person to the allocations list.
-    def allocate_room(self, person):
+    def allocate_person(self, person):
         if (person.get_type() == 'staff' and self.get_type() == 'living'):
             return False
 
         elif (person.get_type() == 'fellow' and not person.opt_in):
             return False
 
+        # Avoid double allocations.
         elif (person in self.people):
             return False
 

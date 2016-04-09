@@ -8,6 +8,9 @@ faker = Faker()
 
 
 def populate_rooms():
+    """Return a dictionary with two lists:
+    A list of 10 offices and 10 living space objects.
+    """
     offices = []
     living = []
     for i in range(10):
@@ -21,6 +24,12 @@ def populate_rooms():
 
 
 def generate_file(number, file_path):
+    """Generate an input file, with random staff and fellow members.
+
+    Arguments:
+    number - the number of lines in the input file.
+    file_path - the relative path to the output file.
+    """
     output_file = open(file_path, 'w')
     for _ in range(number):
         person_name = faker.first_name().upper()

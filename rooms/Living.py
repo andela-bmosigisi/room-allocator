@@ -9,3 +9,6 @@ class Living(Room):
 
     def get_type(self):
         return 'living'
+
+    def has_space(self):
+        return len(self.allocations) < 4

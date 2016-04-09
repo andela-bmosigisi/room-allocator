@@ -9,3 +9,6 @@ class Office(Room):
 
     def get_type(self):
         return 'office'
+
+    def has_space(self):
+        return len(self.allocations) < 6
