@@ -16,11 +16,11 @@ def allocate_people(amity):
         if people_over is True:
             break
         while office.has_space():
-            office.allocate_person(amity.people[p_count])
-            p_count += 1
-            if (p_count > p_length):
+            if (p_count >= p_length):
                 people_over = True
                 break
+            office.allocate_person(amity.people[p_count])
+            p_count += 1
 
     # first, get a list of opt-in fellows.
     fellows = [person for person in amity.people if person.get_type ==
@@ -33,11 +33,11 @@ def allocate_people(amity):
         if people_over is True:
             break
         while living.has_space():
-            living.allocate_person(fellows[p_count])
-            p_count += 1
-            if (p_count > p_length):
+            if (p_count >= p_length):
                 people_over = True
                 break
+            living.allocate_person(fellows[p_count])
+            p_count += 1
 
 
 def populate_people(amity, input_file):
